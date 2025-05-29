@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 주요 개념별 예시 코드 및 아키텍처 역할 설명 자동화 가이드
+
+## 목적
+이 규칙은 특정 사이트, 기술, 프레임워크를 제시하면, 해당 시스템의 주요 개념(클래스, 컴포넌트, 패턴 등)을 파이썬 예시 코드와 함께, 각 개념이 전체 아키텍처에서 어떤 역할을 하는지 한글 주석으로 설명하는 meta prompt를 제공합니다.
+
+## 사용법
+- 아래 프롬프트를 복사해 AI에게 입력하세요.
+- AI는 공식 문서/구조를 참고해 주요 개념을 선정하고, 각 개념별로 30줄 이하의 파이썬 예시 코드와 한글 역할 설명 주석을 생성합니다.
+- 파일명은 `{주제명}_{개념명}.py` 형태로 제안됩니다.
+
+---
+
+### Meta Prompt (한글)
+
+```
+아래에 제시된 사이트(또는 기술/프레임워크)의 공식 문서/구조를 참고해서,
+1. 해당 시스템/프레임워크/라이브러리의 **주요 개념(클래스, 컴포넌트, 패턴 등)**을 선정해.
+2. 각 개념별로 **파이썬 예시 코드**를 만들어줘. (실제 동작 예시 위주, 실제 동작 가능한 핵심만 전달)
+3. 각 예시 코드의 맨 위에는 **해당 개념이 전체 아키텍처에서 어떤 역할을 하는지 한글로 주석**을 달아줘.
+4. 예시 코드는 실제로 동작 가능한 최소 단위로, 불필요한 복잡성 없이 작성해.
+5. 파일명은 {주제명}_{개념명}.py 형태로 제안해줘.
+6. 폴더는 {주제명}으로 만들어서 그 안에 파일들을 넣어줘
+7. 만약 공식 문서에서 중요한 개념이 더 있다면, 파일을 추가로 만들어도 좋아.
+
+**예시 출력:**
+- 주요 개념: 서버(Server), 클라이언트(Client), 툴(Tool), 리소스(Resource), 프롬프트(Prompt) 등
+- 각 개념별 예시 코드 + 맨 위에 한글로 아키텍처 내 역할 설명 주석
+
+**아래에 사이트/기술/프레임워크를 입력하세요:**
+```
+
+---
+
+### Example
+- [modelcontextprotocol_server.py](mdc:modelcontextprotocol/modelcontext_server.py)
+- [modelcontextprotocol_client.py](mdc:modelcontextprotocol/modelcontext_client.py)
+- [modelcontextprotocol_tools.py](mdc:modelcontextprotocol/modelcontext_tools.py)
+- [modelcontextprotocol_resource.py](mdc:modelcontextprotocol/modelcontext_resource.py)
+- [modelcontextprotocol_prompts.py](mdc:modelcontextprotocol/modelcontext_prompts.py)
+
+---
+
+이 규칙을 활용하면, 새로운 기술/사이트의 구조를 빠르게 파악하고, 주요 개념별로 예시 코드와 아키텍처 내 역할을 한글로 정리할 수 있습니다.
+
