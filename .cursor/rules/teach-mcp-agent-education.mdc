@@ -1,0 +1,39 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Teach MCP Agent 교육 자료 자동 점검/생성 규칙
+
+## 목적
+이 규칙은 [teach_mcp_agent.py](mdc:teach_mcp_agent.py)가 docs 및 각 프레임워크 예시 코드([litellm](mdc:litellm), [modelcontextprotocol](mdc:modelcontextprotocol), [openai-agent-sdk](mdc:openai-agent-sdk))를 점검·개선하고, MCP를 빠르게 이해할 수 있는 교육 자료를 자동으로 생성하는 Agent의 구조와 역할을 안내합니다.
+
+## 주요 폴더/파일
+- [docs/](mdc:docs): 마크다운 기반 교육 문서 및 예제 ([mcp-examples.md](mdc:docs/mcp-examples.md), [mcp-concept.md](mdc:docs/mcp-concept.md), [index.md](mdc:docs/index.md))
+- [litellm/](mdc:litellm): LiteLLM 프레임워크 예시 코드
+- [modelcontextprotocol/](mdc:modelcontextprotocol): MCP 프로토콜 예시 코드
+- [openai-agent-sdk/](mdc:openai-agent-sdk): OpenAI Agents SDK 예시 코드
+- [teach_mcp_agent.py](mdc:teach_mcp_agent.py): 교육 자료 점검/생성 Agent 메인 파일
+
+## Agent/Tool 설계 포맷
+- **FileSearchTool**: 폴더 내 파일 검색
+- **ReadFileTool**: 파일 내용 읽기
+- **WriteFileTool**: 파일 내용 수정/덮어쓰기
+- **check_markdown_structure**: md 파일 구조/목차/가독성 점검 (FunctionTool)
+- **generate_education_material**: 교육 자료(요약/튜토리얼/퀴즈) 생성 (FunctionTool)
+
+
+## Agent 동작 흐름
+1. docs 폴더 내 md 파일을 FileSearchTool로 찾음
+2. ReadFileTool로 각 파일 내용을 읽음
+3. check_markdown_structure로 구조/가독성 점검
+4. generate_education_material로 교육 자료 자동 생성
+5. 필요시 WriteFileTool로 개선된 파일 저장
+
+## 예시 코드 참고
+- [teach_mcp_agent.py](mdc:teach_mcp_agent.py) 내 Agent/Tool 정의 및 사용 예시 참고
+
+---
+이 규칙을 참고하면, teach_mcp_agent.py가 각 폴더의 예시 코드와 문서를 자동 점검·개선하고, 교육 자료를 생성하는 전체 구조와 포맷을 빠르게 이해할 수 있습니다.
+
+
