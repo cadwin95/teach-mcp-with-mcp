@@ -28,7 +28,7 @@
 
 아래는 MCP 시스템의 개념도입니다.
 
-```mermaid
+```mermaid!
 flowchart TD
     C(Client) -->|요청| S(MCP Server)
     S --> M1(LLM 1)
