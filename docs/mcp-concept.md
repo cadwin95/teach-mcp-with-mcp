@@ -1,3 +1,9 @@
+<!-- Mermaid JS 자동 변환 스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({startOnLoad:true});
+</script>
+
 # MCP란 무엇인가?
 
 ---
